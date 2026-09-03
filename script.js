@@ -53,6 +53,14 @@
     );
     vids.forEach(function (v) {
       io.observe(v);
+      function markReady() {
+        var wrap = v.closest(".sig-featured-media, .sig-media, .reel-item");
+        if (wrap) wrap.classList.add("has-video");
+      }
+      v.addEventListener("loadeddata", markReady);
+      v.addEventListener("loadedmetadata", markReady);
+      v.addEventListener("canplay", markReady);
+      if (v.readyState >= 2) markReady();
     });
 
     // Reveal on scroll

@@ -79,10 +79,17 @@ ul { list-style: none; }
 .brand-logo {
   width: 2.6rem;
   height: 2.6rem;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   flex-shrink: 0;
+  border-radius: 50%;
 }
-.brand-logo-footer { width: 2.4rem; height: 2.4rem; }
+.brand-logo-footer {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
 .brand-text { display: flex; flex-direction: column; line-height: 1.15; }
 .brand-name {
   font-family: var(--font-display);
@@ -420,23 +427,46 @@ ul { list-style: none; }
 }
 .sig-featured-media {
   position: relative;
-  min-height: 280px;
+  min-height: 320px;
   background: #e8e2db;
   aspect-ratio: 4/5;
+  overflow: hidden;
 }
 @media (min-width: 900px) {
   .sig-featured-media {
     aspect-ratio: auto;
-    min-height: 100%;
+    min-height: 420px;
+    height: 100%;
   }
 }
 .sig-featured-media video,
 .sig-featured-media .sig-video {
   width: 100%;
   height: 100%;
+  min-height: 320px;
   object-fit: cover;
-  position: relative;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #1a2e28;
+}
+.sig-featured-media .media-fallback {
   z-index: 1;
+}
+.sig-featured-media.has-video .media-fallback {
+  display: none;
+}
+.sig-media {
+  position: relative;
+}
+.sig-media video.sig-video {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: #1a2e28;
+}
+.sig-media.has-video .media-fallback {
+  display: none;
 }
 .sig-featured-copy {
   padding: 1.75rem 1.5rem 2rem;
@@ -476,6 +506,30 @@ ul { list-style: none; }
   object-fit: cover;
   position: relative;
   z-index: 1;
+}
+.sig-media-static {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background:
+    linear-gradient(160deg, rgba(184, 129, 133, 0.18), transparent 55%),
+    linear-gradient(200deg, #efe8e2, #e2d9d1);
+  border-bottom: 1px solid var(--border);
+}
+.sig-static-label {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--green);
+  letter-spacing: 0.02em;
+}
+.sig-static-sub {
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rose);
 }
 .sig-card-body {
   padding: 1.5rem 1.35rem 1.75rem;
