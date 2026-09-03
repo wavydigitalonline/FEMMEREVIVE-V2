@@ -500,36 +500,17 @@ ul { list-style: none; }
   background: #e8e2db;
   overflow: hidden;
 }
-.sig-media video {
+.sig-media video,
+.sig-media .sig-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: relative;
   z-index: 1;
 }
-.sig-media-static {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  background:
-    linear-gradient(160deg, rgba(184, 129, 133, 0.18), transparent 55%),
-    linear-gradient(200deg, #efe8e2, #e2d9d1);
-  border-bottom: 1px solid var(--border);
-}
-.sig-static-label {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 500;
-  color: var(--green);
-  letter-spacing: 0.02em;
-}
-.sig-static-sub {
-  font-size: 0.65rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--rose);
+.sig-media .sig-img {
+  position: absolute;
+  inset: 0;
 }
 .sig-card-body {
   padding: 1.5rem 1.35rem 1.75rem;
