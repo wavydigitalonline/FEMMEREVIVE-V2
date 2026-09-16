@@ -77,8 +77,8 @@ ul { list-style: none; }
 }
 .brand { display: flex; align-items: center; gap: 0.75rem; }
 .brand-logo {
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2.85rem;
+  height: 2.85rem;
   object-fit: cover;
   object-position: center;
   flex-shrink: 0;
@@ -94,12 +94,12 @@ ul { list-style: none; }
 .brand-name {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--green);
   transition: color 0.2s;
 }
 .brand-tag {
-  font-size: 0.58rem;
+  font-size: 0.62rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--rose);
@@ -177,6 +177,14 @@ ul { list-style: none; }
   .header-cta { display: inline-flex; }
   .nav-toggle { display: none; }
   .nav-mobile { display: none !important; }
+  .brand { gap: 0.9rem; }
+  .brand-logo {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .brand-name { font-size: 1.25rem; }
+  .brand-tag { font-size: 0.7rem; letter-spacing: 0.14em; }
+  .header-inner { padding: 1rem 0; }
 }
 
 /* Buttons */
